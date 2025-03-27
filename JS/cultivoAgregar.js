@@ -1,76 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Seleccionar elementos del DOM usando getElementById
-    const nameInput = document.getElementById('name');
-    const tipoInput = document.getElementById('id'); 
-    const ubicacionSelect = document.getElementById('Ubicacion');
-    const descripcionTextarea = document.getElementById('descripcion');
-    const userForm = document.querySelector('.form-container__form');
+document.getElementById("cultivoForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // Objeto para almacenar los datos del cultivo
-    const cultivoData = {
-        name: '',
-        tipo: '',
-        ubicacion: '',
-        descripcion: ''
-    };
+    const formData = new FormData(this);
 
-    // Evento para validar el formulario al enviar
-    userForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Evitar el envío del formulario
+    // Asegurar que usuario_id se agregue correctamente
+    const usuarioId = document.getElementById("usuario_id").value;
+    formData.append("usuario_id", usuarioId);
 
-        // Capturar los valores actuales de los campos
-        cultivoData.name = nameInput.value.trim();
-        cultivoData.tipo = tipoInput.value.trim();
-        cultivoData.ubicacion = ubicacionSelect.value.trim();
-        cultivoData.descripcion = descripcionTextarea.value.trim();
+    const cultivoData = Object.fromEntries(formData.entries());
 
-        console.log("Enviando formulario...", cultivoData);
-
-        // Validar que los campos no estén vacíos
-        if (
-            cultivoData.name === '' ||
-            cultivoData.tipo === '' ||
-            cultivoData.ubicacion === '' ||
-            cultivoData.descripcion === ''
-        ) {
-            showMessage('Error: Debes llenar todos los campos', 'error');
-            return;
-        }else{
-            showMessage('¡Cultivo agregado con éxito!', 'correcto');
-        setTimeout(() => {
-            window.location.href = 'cultivos.html';
-        }, 3000);
-        }
-        
-    });
-    // Función para leer el texto de los inputs
-    function readText(e) {
-        console.log('Leyendo input:', e.target);
-        if (e.target === nameInput) {
-            cultivoData.name = e.target.value.trim();
-        } else if (e.target === tipoInput) {
-            cultivoData.tipo = e.target.value.trim();
-        } else if (e.target === ubicacionSelect) {
-            cultivoData.ubicacion = e.target.value.trim();
-        } else if (e.target === descripcionTextarea) {
-            cultivoData.descripcion = e.target.value.trim();
-        }
-        console.log('Datos actualizados:', cultivoData);
-    }
-    // Función para mostrar mensajes de error o éxito
-    function showMessage(message, type) {
-        const messageElement = document.createElement('P');
-        messageElement.textContent = message;
-        messageElement.classList.add(type === 'error' ? 'error' : 'correcto');
-        userForm.appendChild(messageElement);
-
-        setTimeout(() => {
-            messageElement.remove();
-        }, 3000);
-    }
-    // Eventos para capturar los valores de los inputs
-    nameInput.addEventListener('input', readText);
-    tipoInput.addEventListener('input', readText);
-    ubicacionSelect.addEventListener('change', readText);
-    descripcionTextarea.addEventListener('input', readText);
+    fetch("http://localhost:3000/api/cultivos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cultivoData),
+    })
+    .then(response => response.json())
+    .then(data => console.log("✅ Respuesta del servidor:", data))
+    .catch(error => console.error("❌ Error:", error));
 });

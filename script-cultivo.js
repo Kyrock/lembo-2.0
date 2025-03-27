@@ -1,47 +1,43 @@
-const express = require("express");
-const mysql = require("mysql2");
-const cors = require("cors");
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("form-cultivo");
 
-const app = express();
-app.use(express.json()); // Permitir JSON en las peticiones
-app.use(cors()); // Evitar problemas con CORS
+    formulario.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Evita el envío normal del formulario
 
-// aca esta la  Conexión a MySQL
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root", // Reemplaza con tu usuario de MySQL
-    password: "", // Reemplaza con tu contraseña
-    database: "lembo",
-});
+        // Capturar valores del formulario
+        const nombre = document.getElementById("nombre").value.trim();
+        const tipo = document.getElementById("tipo").value.trim();
+        const ubicacion = document.getElementById("ubicacion").value.trim();
+        const descripcion = document.getElementById("descripcion").value.trim();
 
-db.connect(err => {
-    if (err) {
-        console.error("Error de conexión a MySQL:", err);
-        return;
-    }
-    console.log("Conectado a MySQL");
-});
-
-// Ruta para agregar cultivos
-app.post("/api/cultivos", (req, res) => {
-    const { nombre, tipo, ubicacion, descripcion } = req.body;
-
-    if (!nombre || !tipo || !ubicacion) {
-        return res.status(400).json({ message: "Todos los campos obligatorios deben estar llenos." });
-    }
-
-    const sql = "INSERT INTO cultivos (nombre, tipo, ubicacion, descripcion) VALUES (?, ?, ?, ?)";
-    db.query(sql, [nombre, tipo, ubicacion, descripcion], (err, result) => {
-        if (err) {
-            console.error("Error al insertar en la base de datos:", err);
-            return res.status(500).json({ message: "Error al agregar cultivo" });
+        // Validar que los campos no estén vacíos
+        if (!nombre || !tipo || !ubicacion || !descripcion) {
+            alert("❌ Todos los campos son obligatorios.");
+            return;
         }
-        res.status(201).json({ message: "Cultivo agregado correctamente", id: result.insertId });
-    });
-});
 
-// Iniciar el servidor
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+        // Crear el objeto con los datos
+        const nuevoCultivo = { nombre, tipo, ubicacion, descripcion };
+
+        try {
+            // Enviar datos al servidor con fetch()
+            const respuesta = await fetch("http://localhost:3000/api/cultivos", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(nuevoCultivo),
+            });
+
+            const datos = await respuesta.json();
+
+            if (respuesta.ok) {
+                alert("✅ Cultivo agregado correctamente");
+                formulario.reset(); // Limpiar el formulario
+            } else {
+                alert(`❌ Error: ${datos.error}`);
+            }
+        } catch (error) {
+            console.error("❌ Error en la petición:", error);
+            alert("❌ Error al conectar con el servidor.");
+        }
+    });
 });

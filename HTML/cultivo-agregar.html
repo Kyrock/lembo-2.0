@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +8,39 @@
 </head>
 <body>
     <section class="form-container">
-        <form class="form-container__form">
+        <form class="form-container__form" id="cultivoForm">
             <h2 class="form-container__title">Agregar Cultivo</h2>
             <div class="form-container__content">
                 <div class="form-container__field">
-                    <label for="name" class="form-container__label">Nombre:</label>
-                    <input type="text" name="name" id="name" placeholder="Nombre" class="form-container__input">
+                    <label for="nombre" class="form-container__label">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-container__input" required>
                 </div>
                 <div class="form-container__field">
-                    <label for="id" class="form-container__label">Tipo:</label>
-                    <input type="text" name="id" id="id" placeholder="Tipo de Cultivo" class="form-container__input">
+                    <label for="tipo" class="form-container__label">Tipo:</label>
+                    <input type="text" name="tipo" id="tipo" placeholder="Tipo de Cultivo" class="form-container__input" required>
                 </div>
                 <div class="form-container__field">
-                    <label for="Ubicacion" class="form-container__label">Ubicación:</label>
-                    <select name="Ubicacion" id="Ubicacion" class="form-container__select">
-                        <option value="" class="form-container__option">Ubicación de terreno</option>
-                        <option value="Parcela 3" class="form-container__option">Parcela 3</option>
-                        <option value="Parcela 5" class="form-container__option">Parcela 5</option>
-                        <option value="Invernadero Norte" class="form-container__option">Invernadero Norte</option>
-                        <option value="Invernadero Central" class="form-container__option">Invernadero Central</option>
+                    <label for="ubicacion" class="form-container__label">Ubicación:</label>
+                    <select name="ubicacion" id="ubicacion" class="form-container__select" required>
+                        <option value="">Ubicación de terreno</option>
+                        <option value="Parcela 3">Parcela 3</option>
+                        <option value="Parcela 5">Parcela 5</option>
+                        <option value="Invernadero Norte">Invernadero Norte</option>
+                        <option value="Invernadero Central">Invernadero Central</option>
                     </select>
                 </div>
                 <div class="form-container__field">
                     <label for="descripcion" class="form-container__label">Descripción:</label>
-                    <textarea name="descripcion" id="descripcion" placeholder="Descripción" class="form-container__textarea"></textarea>
+                    <textarea name="descripcion" id="descripcion" placeholder="Descripción" class="form-container__textarea" required></textarea>
                 </div>
+                <!-- Campo oculto para usuario_id -->
+                <input type="hidden" name="usuario_id" id="usuario_id" value="1">
             </div>
-            <button type="submit" formaction="cultivos.html" class="form-container__button">Agregar Cultivo</button>
+            <button type="submit" class="form-container__button">Agregar Cultivo</button>
         </form>
     </section>
+
+    <script src="../JS/cultivoAgregar.js"></script>
+    <script src="../script-insumos.js"></script>
 </body>
-<script src="../script-cultivo.js"></script>
 </html>
