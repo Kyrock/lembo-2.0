@@ -11,7 +11,7 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'root',
     database: 'lembo',
-    port: 3400
+    port: 3307
 });
 db.connect((err) => {
     if(err){
@@ -42,6 +42,6 @@ app.post('/insumo', (req, res) => {
     });
 });
 
-app.listen(5500, () => {
-    console.log('Server is running on http://localhost:5500');
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
 });
