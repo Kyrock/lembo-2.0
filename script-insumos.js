@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             valor: valor ? parseFloat(valor.value) : 0,
             cantidad: cantidad ? parseInt(cantidad.value) : 0,
             unidad: unidad ? unidad.value : '',
-            descripcion: descripcion ? descripcion.value.trim() : '
+            descripcion: descripcion ? descripcion.value.trim() : ''
         };
 
         // Validación
