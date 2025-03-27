@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/actualizar_cultivos.css">
+    <title>Actualizar Cultivo</title>
+</head>
+<body>
+    <section class="form-container">
+        <form class="form">
+            <h2 class="form__title">Actualizar Cultivo</h2>
+            <div class="form__container">
+                <div class="form__content">
+                    <label class="form__label" for="nombre">Nombre</label>
+                    <input class="form__input" type="text" id="nombre" placeholder="Lechuga" name="nombre">
+                    <label class="form__label" for="tamaño">Cantidad</label>
+                    <input class="form__input" type="number" id="tamaño" placeholder="798" name="tamaño">
+                </div>
+                <div class="form__image-container">
+                    <img class="form__img" src="../img/lechuga.jpg" alt="Foto de perfil">
+                </div>
+            </div>     
+            <div class="form__campo">
+                <label class="form__label" for="id">ID</label>
+                <input class="form__input" type="number" name="id" id="id" placeholder="CUL000011">
+            </div>
+            <div class="form__campo">
+                <label class="form__label" for="cultivo">Tipo:</label>
+                <select class="form__select" name="cultivo" id="cultivo">
+                    <option value="">Selecciona un tipo</option>
+                    <option value="">Tubérculo</option>
+                    <option value="">Hortaliza</option>
+                    <option value="">Cereal</option>
+                </select>
+            </div>
+            <div class="form__campo">
+                <label class="form__label" for="descripcion">Descripción:</label>
+                <textarea class="form__textarea" name="description" id="description" placeholder="Descripción"></textarea>
+            </div>
+            <button class="form__button" type="submit" formaction="cultivos.html">Actualizar Cultivo</button>
+        </form>
+    </section>
+    <script src="../JS/actualizarCultivo.js"></script>
+</body>
+</html>

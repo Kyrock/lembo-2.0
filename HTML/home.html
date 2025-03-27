@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembo</title>
+    <link rel="stylesheet" href="Normalize.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b08d7118d6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <img src="../IMG/logo-sena.png" alt="Logo Lembo" class="nav__logo-img">
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="home.html" class="nav__link nav__link--active">Inicio</a></li>
+                <li class="nav__item"><a href="cultivos.html" class="nav__link">Cultivos</a></li>
+                <li class="nav__item"><a href="informe_usuarios.html" class="nav__link">Usuarios</a></li>
+                <li class="nav__item"><a href="informe.html" class="nav__link">Informe</a></li>
+                <li class="nav__item"><a href="login.html" class="nav__link">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Sistema Administrativo Lembo 2.0</h1>
+                <p class="hero__text">Gestión integral de granjas con tecnología de vanguardia</p>
+                <div class="hero__stats">
+                    <div class="hero__stat-item">
+                        <i class="fas fa-users"></i>
+                        <span class="hero__stat-number">150+</span>
+                        <span class="hero__stat-text">Usuarios Activos</span>
+                    </div>
+                    <div class="hero__stat-item">
+                        <i class="fas fa-microchip"></i>
+                        <span class="hero__stat-number">1000+</span>
+                        <span class="hero__stat-text">Sensores Conectados</span>
+                    </div>
+                    <div class="hero__stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="hero__stat-number">98%</span>
+                        <span class="hero__stat-text">Precisión</span>
+                    </div>
+                </div>
+                <a href="dashboard.html" class="hero__cta">Acceder al Sistema</a>
+            </div>
+            <div class="hero__image">
+                <img src="https://www.interseccion.es/wp-content/uploads/2020/10/animales-en-granja.jpg" alt="Imagen Principal" class="hero__img">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="features__title">Características del Sistema</h2>
+            <div class="features__grid">
+                <article class="feature-card">
+                    <img src="https://media.gettyimages.com/id/979154640/es/v%C3%ADdeo/pantallas-de-identificaci%C3%B3n-de-datos.jpg?s=640x640&k=20&c=Ztt6WoN12yDvQwxDoNqPFRazHCKOUsNXyVLNCm-PGFw=" alt="Monitoreo" class="feature-card__img">
+                    <h3 class="feature-card__title">Monitoreo en Tiempo Real</h3>
+                    <p class="feature-card__text">Sensores avanzados para el control de temperatura, humedad y más variables críticas</p>
+                    <ul class="feature-card__list">
+                        <li>Control de temperatura</li>
+                        <li>Medición de humedad</li>
+                        <li>Calidad del aire</li>
+                        <li>Alertas automáticas</li>
+                    </ul>
+                </article>
+                <article class="feature-card">
+                    <img src="https://media.gettyimages.com/id/1423067683/es/v%C3%ADdeo/reuni%C3%B3n-de-negocios-mentor-y-trabajo-en-equipo-con-pasantes-aprendiendo-y-capacitando.jpg?s=640x640&k=20&c=1fdy8vhRh3ivMQPMp57VG9nxoRJBLe06jwnqUTjr0lQ=" alt="Gestión" class="feature-card__img">
+                    <h3 class="feature-card__title">Gestión de Usuarios</h3>
+                    <p class="feature-card__text">Sistema multiusuario con roles y permisos personalizados</p>
+                    <ul class="feature-card__list">
+                        <li>Roles personalizados</li>
+                        <li>Control de acceso</li>
+                        <li>Registro de actividades</li>
+                        <li>Reportes detallados</li>
+                    </ul>
+                </article>
+                <article class="feature-card">
+                    <img src="https://media.gettyimages.com/id/1399521171/es/v%C3%ADdeo/an%C3%A1lisis-de-datos-digitales-versi%C3%B3n-azul-en-bucle-estad%C3%ADsticas-gr%C3%A1fico-financiero-econom%C3%ADa.jpg?s=640x640&k=20&c=HFMz_RF-95PBvSAfc1b2HA7MOAN_Pwu-acinuyb4F5g=" alt="Análisis" class="feature-card__img">
+                    <h3 class="feature-card__title">Análisis de Datos</h3>
+                    <p class="feature-card__text">Herramientas avanzadas para análisis y toma de decisiones</p>
+                    <ul class="feature-card__list">
+                        <li>Gráficos interactivos</li>
+                        <li>Predicciones IA</li>
+                        <li>Exportación de datos</li>
+                        <li>Informes personalizados</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="dashboard-preview">
+            <h2 class="dashboard-preview__title">Panel de Control Intuitivo</h2>
+            <div class="dashboard-preview__content">
+                <div class="dashboard-preview__stats">
+                    <div class="stat-card">
+                        <i class="fas fa-temperature-high"></i>
+                        <h4>Monitoreo Ambiental</h4>
+                        <p>Control preciso de condiciones</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bell"></i>
+                        <h4>Sistema de Alertas</h4>
+                        <p>Notificaciones en tiempo real</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-database"></i>
+                        <h4>Gestión de Datos</h4>
+                        <p>Almacenamiento seguro</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Acceso Móvil</h4>
+                        <p>Control desde cualquier dispositivo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="../IMG/Propuesta Logo 2 (1).jpg" alt="Logo Lembo" class="footer__logo-img">
+            </div>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer__copyright">&copy; 2024 Lembo 2.0. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

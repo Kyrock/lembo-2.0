@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --fuente: Rubik Mono One;
+    --fuente-dos: lato;
+    --fuente-tre: Pontano Sans;
+    --fuente-cuatro: Black Han Sans;
+    --fuente-primary:Work Sans;
+    
+    --Font-Family: 'Inter', 'Lato', 'Roboto Slab', 'Roboto', 'Staatliches', sans-serif;
+   /* TONOS COLOR */
+
+    --blue: #1b86ff;
+    --black: #000;
+    --black-suave:#b4b4b4;
+    --white: #FFFFFF;
+    --Yellow-button: #eed11c;
+    --colorv:#B1CC33;
+    --color2v: #A8FF35;
+    --color-f:#DBEFB9;
+    --color-h:#5DD12E;
+}
+
+h1{
+    font-size: 3.2rem;
+
+}
+h2{
+    font-size: 2.4rem ;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1.6rem;
+}
+h5{
+    font-size: 1.4rem;
+}
+h6{
+    font-size: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Font-Family);
+}
+
+.background {
+    background-image: url('../img/fondo_pantalla.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin {
+    background-color: var(--black-suave);
+    padding: 2rem x 3rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0.4rem 0.6rem var(--black);
+    width: 30rem;
+    opacity: 69%;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    color: var(--black);
+}
+
+p {
+    margin-bottom: 2rem ;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.pin__inputs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.pin__inputs input {
+    background-color: var(--black-suave);
+    width: 3.5rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 0.1rem solid var(--black);
+    border-radius: 0.5rem;
+
+}
+
+
+.pin__button {
+    background-color: var(--white);
+    color: var(--black);
+    border: 0.1rem solid var(--black);
+    margin: 1rem;
+    padding: 0.4rem 3rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+@media (max-width: 768px) {
+    .pin {
+        width: 20rem;
+        padding: 1rem;
+    }
+
+    .pin__inputs input {
+        width: 2.5rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+
+    .pin__button {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .background {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        padding-right: 2rem;
+    }
+
+    .pin {
+        width: 100%;
+        padding: 0.5rem;
+        box-shadow: none;
+        border-radius: 0.5rem;
+    }
+
+    .pin__inputs {
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .pin__inputs input {
+        width: 1.4rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    .pin__button {
+        width: 50%;
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    h1, h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
