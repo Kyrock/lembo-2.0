@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/agregar_usuario.css">
+    <title>Agregar Usuario</title>
+</head>
+<body>
+    <section class="form-container">
+        <form class="form">
+            <h2 class="form__title">Agregar Usuario</h2>
+            <div class="form__container">
+                <div class="form__field">
+                    <label class="form__label" for="name">Nombre:</label>
+                    <input class="userName" type="text" name="name" id="name" placeholder="Nombre">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="apellido">Apellido:</label>
+                    <input class="lastName" type="text" name="apellido" id="apellido" placeholder="Apellido">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="id">ID:</label>
+                    <input class="userId" type="number" name="id" id="id" placeholder="ID">
+                </div>
+                <div class="form__field">
+                    <label class="form__label" for="telefono">Número de teléfono:</label>
+                    <input class="userPhone" type="number" name="telefono" id="telefono" placeholder="Número de teléfono">
+                </div>
+                <div class="form__field">
+                    <label class="form__label userRole" for="rol">Rol:</label>
+                    <select class="form__select" name="rol" id="rol">
+                        <option value="">Selecciona un Rol</option>
+                        <option value="Usuario">Usuario</option>
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="personal_de_Apoyo">Personal de Apoyo</option>
+                    </select>
+                </div>
+            </div>
+            <button class="form__button" type="submit" formaction="../HTML/listar-usuarios.html">Agregar Usuario</button>
+        </form>
+    </section>
+</body>
+<script src="../JS/agregarUsuario.js"></script>
+</html>

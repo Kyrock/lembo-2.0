@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&display=swap');
+:root{
+    /* Prymari color */
+    --Primary-50:#EDF7E8;
+    --Primary-100:#DBEFB9;
+    --Primary-200:#C9E8B9;
+    --Primary-300:#B7E0A2;
+    --Primary-400:#A5D88B;
+    --Primary-500:#93D074;
+    --Primary-600:#81C85D;
+    --Primary-700:#6FC046;
+    --Primary-800:#5DD12E;
+    --Primary-900:#4BBD17;
+    --Primary-950:#39A900;
+
+    /* Secundary Color */
+
+    --Green: #007832;
+    --Blue: #50E5F9;
+
+    /* Color Neutro */
+
+    --Blanco:#FFF;
+    --Negro: #000;
+    --Gris-100:#313131;
+    --Gris-80:#626262;
+    --Gris-60:#949494;
+    --Gris-40:#C5C5C5;
+    --Gris-20:#F6F6F6;
+
+    /* Font Family */
+    --Font-Family: 'Inter', 'Lato', 'Roboto Slab', 'Roboto', 'Staatliches', sans-serif;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/IMG/Fondo-login.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 60rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.form-container {
+    background-color: var(--Primary-900);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--Negro);
+    width: 100%;
+    max-width: 24rem;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: var(--Font-Family);
+    color: var(--Blanco);
+}
+
+.title{
+    text-align: center; 
+    margin-bottom: 2rem; 
+    font-size: 2rem; 
+    color: var(--Blanco); 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+select,input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--Gris-60);
+}
+
+.submit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+button {
+    background: var(--Blanco);
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover{
+    background: var(--Gris-40);
+    border: none;
+}
+
+button i {
+    font-size: 1.5rem;
+    color: var(--Negro);
+}
+
+span {
+    font-size: 1rem;
+    color: var(--Blanco);
+    cursor: pointer;
+    font-family: var(--Font-Family)
+}
+
+.logo-container {
+    text-align: center;
+    color: var(--Blanco);
+}
+
+.logo-container img {
+    width: 17rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.logo-container h2 {
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    align-items: center;
+    font-family: var(--Font-Family)
+}

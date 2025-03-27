@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cultivos</title>
+    <link rel="stylesheet" href="../CSS/cultivos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../JS/sidebar.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header__left-section">
+            <span class="header__menu-item">Cultivos</span>
+            <span class="header__menu-separator">/</span>
+            <span class="header__menu-item">Lista de Cultivos</span>
+            <span class="header__menu-separator">-</span>
+            <span class="header__menu-item">Cantidad de Cultivos: 34</span>
+        </div>
+        <div class="header__right-section">
+            <input type="text" class="header__search-bar" placeholder="Buscar">
+            <span class="header__icon"><i class='bx bx-message-square-add' id="add" title="Agregar"></i></span>
+            <span class="header__icon"><i class='bx bxs-download' id="download" title="Descargar Informe"></i></span>
+            <span class="header__icon"><box-icon name='bell' type='solid'></box-icon></span>
+        </div>
+    </div>
+    <main>
+        <!-- Aquí va la SIDEBAR -->
+        <div class="sidebar"> </div>
+        <section class="content">
+            <table class="content__table">
+                <thead class="content__table-head">
+                    <tr class="content__table-row">
+                        <th class="content__table-header">Nombre</th>
+                        <th class="content__table-header">ID</th>
+                        <th class="content__table-header">Tamaño</th>
+                        <th class="content__table-header">Ubicación</th>
+                        <th class="content__table-header">Tipo</th>
+                        <th class="content__table-header">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="content__table-body"></tbody>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Maíz</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 5</td>
+                        <td class="content__table-cell">Cereal</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Papa</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 3</td>
+                        <td class="content__table-cell">Tubérculo</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Cilantro</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">invernadero Sur</td>
+                        <td class="content__table-cell">Hierba</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Yuca</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 1</td>
+                        <td class="content__table-cell">Tubérculo</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Plátano</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 3</td>
+                        <td class="content__table-cell">Fruta</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Tomate</td>
+                        <td class="content__table-cell">CUL00004</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">invernadero Norte</td>
+                        <td class="content__table-cell">Vegetal</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Arracacha</td>
+                        <td class="content__table-cell">CUL00003</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 2</td>
+                        <td class="content__table-cell">Tubérculo</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Zanahoria</td>
+                        <td class="content__table-cell">CUL00043</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">invernadero Sur</td>
+                        <td class="content__table-cell">Vegetal</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Papa Criolla</td>
+                        <td class="content__table-cell">CUL00034</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 4</td>
+                        <td class="content__table-cell">Tubérculo</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Remolacha</td>
+                        <td class="content__table-cell">CUL00005</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 5</td>
+                        <td class="content__table-cell">Tubérculo</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Limón</td>
+                        <td class="content__table-cell">CUL00001</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 3</td>
+                        <td class="content__table-cell">Fruta</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Cebolla</td>
+                        <td class="content__table-cell">CUL00044</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 3</td>
+                        <td class="content__table-cell">Verdura</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Mango</td>
+                        <td class="content__table-cell">CUL00022</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 5</td>
+                        <td class="content__table-cell">Fruta</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Banano</td>
+                        <td class="content__table-cell">CUL00008</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">Parcela 5</td>
+                        <td class="content__table-cell">Fruta</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="content__table-row">
+                        <td class="content__table-cell">Carambolo</td>
+                        <td class="content__table-cell">CUL00066</td>
+                        <td class="content__table-cell">500 uds</td>
+                        <td class="content__table-cell">invernadero Oeste</td>
+                        <td class="content__table-cell">Fruta</td>
+                        <td class="content__table-cell">
+                            <div class="icon-container">
+                                <div class="icon-container__icon icon-container__icon--blue" title="Editar">
+                                    <i class='bx bxs-edit' id="redirectButton"></i>
+                                </div>
+                                <div class="icon-container__icon icon-container__icon--red" title="Eliminar">
+                                    <i class='bx bxs-trash'></i>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Repeat similar structure for other rows -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        document.getElementById("redirectButton").onclick = function() {
+            window.location.href = "actualizar_cultivo.html"; // Cambia la ruta si es necesario
+        };
+        document.getElementById("add").onclick = function() {
+            window.location.href = "cultivo-agregar.html"; // Cambia la ruta si es necesario
+        };    
+        document.getElementById("download").onclick = function() {
+            window.location.href = "cultivo_informe.html"; // Cambia la ruta si es necesario
+        };
+    </script>
+</body>
+
+</html>

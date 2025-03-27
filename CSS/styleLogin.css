@@ -1,0 +1,233 @@
+:root {
+    /* Prymari color */
+    --Primary-50: #EDF7E8;
+    --Primary-100: #DBEFB9;
+    --Primary-200: #C9E8B9;
+    --Primary-300: #B7E0A2;
+    --Primary-400: #A5D88B;
+    --Primary-500: #93D074;
+    --Primary-600: #81C85D;
+    --Primary-700: #6FC046;
+    --Primary-800: #5DD12E;
+    --Primary-900: #4BBD17;
+    --Primary-950: #39A900;
+
+    /* Secundary Color */
+    --Green: #007832;
+    --Blue: #50E5F9;
+
+    /* Color Neutro */
+    --Blanco: #FFF;
+    --Negro: #000;
+    --Gris-100: #313131;
+    --Gris-80: #626262;
+    --Gris-60: #949494;
+    --Gris-40: #C5C5C5;
+    --Gris-20: #F6F6F6;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* Cuerpo */
+body {
+    font-family: Helvetica Neue, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(/IMG/Fondo-login.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Formulario */
+.container__form {
+    padding: 2rem;
+    display: flex;
+    width: 35.313rem;
+    height: 37.5rem;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background: var(--Primary-900);
+    align-items: center;
+}
+
+/* Tamaño letra login */
+.container__title {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--Blanco);
+    margin-bottom: 25px;
+    text-shadow: 1rem;
+}
+
+label,
+p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Espacios en el formulario */
+.container__input {
+    padding: 1rem 3.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color:var(--Blanco);
+    outline: none;
+    color: var(--Negro);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Logo */
+.container__logo {
+    width: 6.139rem;
+    height: 5.769rem;
+    border-radius: 10rem;
+    margin-bottom: 3rem;
+}
+
+/* Estilos para la caja de entrada */
+.container__input-box {
+    position: relative;
+    width: 27rem;
+    margin: 0.5rem 0;
+}
+
+/* Estilos para los campos de entrada */
+.container__input-box .container__input {
+    width: 100%;
+    padding: 15px 45px;
+    font-size: 1rem;
+    color: var(--Negro);
+    background-color: var(--Blanco);
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+}
+
+/* Estilo de los íconos */
+.container__icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--Negro);
+}
+
+/* Estilo placeholder */
+.container__input::placeholder {
+    color: var(--Gris-40);
+}
+
+/* Recordar contraseña */
+.container__remember-forgot a {
+    text-decoration: none;
+    color: var(--Blanco);
+}
+
+.container__remember-forgot {
+    margin: 1rem;
+}
+
+/* Botón */
+.container__button {
+    background-color: var(--Negro);
+    color: var(--Blanco);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: 16rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.container__button:hover {
+    background-color: var(--Gris-100);
+    transform: scale(1.05);
+    border: none;
+}
+/* Alertas del formulario */
+.correcto {
+    background-color: var(--Primary-500);
+    border: solid var(--Gris-100) 0.1rem ;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+    color: var(--Blanco);
+    text-transform: uppercase;
+    border-radius: 1rem;
+}
+
+.error {
+    background-color: rgb(185, 0, 0);
+    border: solid var(--Gris-100) 0.1rem ;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+    border-radius: 1rem;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+    .container__form {
+        width: 90%;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .container__title {
+        font-size: 3rem;
+    }
+
+    .container__input-box {
+        width: 100%;
+    }
+
+    .container__button {
+        width: 100%;
+    }
+}
+
+/* Responsivo para móviles (pantallas pequeñas) */
+@media (max-width: 480px) {
+    .container__form {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .container__title {
+        font-size: 2.5rem;
+    }
+
+    .container__icon {
+        display: none;
+    }
+
+    .container__logo {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .container__input-box .container__input {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .container__button {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/register2.css">
+    <title>Registro Usuario</title>
+</head>
+<body>
+    <div class="main-container">
+        <button class="button-back" id="redirectButton" style="cursor: pointer;">
+            <i class='bx bx-left-arrow-alt'></i>
+            <span>Atras</span>
+        </button>
+        
+        <div class="form-container">
+            <h1>Registro</h1>
+            <form action="">
+                <input type="email" placeholder="Correo Electronico">
+                <input type="tel" placeholder="Numero de Celular">
+                <input type="number" placeholder="Número de Documento">
+                <select name="input" id="">
+                    <option value="#">Estado</option>
+                    <option value="#">Activo</option>
+                    <option value="#">Inactivo</option>
+                </select>
+                <div class="submit-container">
+                    <button type="submit" formaction="verificacion.html">Ingresar</button>
+                </div>
+            </form>
+        </div>
+        <div class="logo-container">
+            <img src="../IMG/Propuesta Logo 2 (1).jpg" alt="LEMBO Logo">
+            <h2>LEMBO</h2>
+        </div>
+    </div>
+    <script>
+        document.getElementById("redirectButton").onclick = function() {
+            window.location.href = "register1.html"; // Cambia la ruta si es necesario
+        };
+    </script>
+</body>
+</html>

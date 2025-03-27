@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Sesión</title>
+    <link rel="stylesheet" href="../CSS/styleLogin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <h2 class="container__title">Login</h2>
+        <form class="userForm container__form">
+            <img src="/IMG/Propuesta Logo 2 (1).jpg" alt="Logo" class="container__logo">
+            <div class="container__input-box">
+                <input type="text" id="username" class="userNameInput container__input" placeholder="Correo Electrónico">
+                <i class='bx bxs-user container__icon'></i>
+            </div>
+            <div class="container__input-box">
+                <input type="password" class="userPasswordInput container__input" placeholder="Contraseña">
+                <i class='bx bx-lock container__icon'></i>
+            </div>
+            <div class="container__remember-forgot">
+                <a href="verificacion.html" class="container__link">¿Olvidó su contraseña?</a>
+            </div>
+            <button type="submit" class="container__button">Iniciar Sesión</button>
+        </form>
+    </div>
+    <script src="../JS/validacionesLogin.js"></script>
+</body>
+</html>
