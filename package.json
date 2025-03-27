@@ -1,0 +1,24 @@
+{
+  "name": "lembo-2.0",
+  "version": "1.0.0",
+  "description": "Rico Programar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyrock/lembo-2.0.git"
+  },
+  "author": "Sanchez, Carrillo, Rolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kyrock/lembo-2.0/issues"
+  },
+  "homepage": "https://github.com/Kyrock/lembo-2.0#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
+  }
+}
