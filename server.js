@@ -10,8 +10,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'lembo',
-    port: 3307
+    database: 'lembo'
 });
 db.connect((err) => {
     if(err){
@@ -26,22 +25,21 @@ db.on('error', (err) => {
     console.error('Database error:', err);
 });
 
-// Route to create a new supply
 app.post('/insumo', (req, res) => {
-    const { name, id, valor, cantidad, unidad, descripcion } = req.body;
-
-    const query = 'INSERT INTO insumos (nombre, id, valor_unitario, cantidad, unidad_medida, descripcion) VALUES (?, ?, ?, ?, ?, ?)';
-    
-    db.query(query, [name, id, valor, cantidad, unidad, descripcion], (err, results) => {
-        if (err) {
-            console.error('Error al insertar insumo:', err);
-            res.status(500).json({ error: 'Error al crear el insumo' });
-            return;
+    const {name, id, valor, cantidad, unidad, descripcion} = req.body;
+    db.query(
+        'INSERT INTO insumo (name, id, valor, cantidad, unidad, descripcion) VALUES (?, ?, ?, ?, ?, ?)',
+        [name, id, valor, cantidad, unidad, descripcion],
+        (err, results) => {
+            if(err){
+                console.log('Error inserting user: ', err);
+                res.status(500).json({error: 'Error inserting user'});
+            }else{
+                res.status(201).json({id: results.insertId, name, id, valor, cantidad, unidad, descripcion});
+            }
         }
-        res.status(201).json({ message: 'Insumo creado exitosamente', id: results.insertId });
+    );
+});
+app.listen(5500, () => {
+    console.log('Server is running on puerto htt://localhost:5500');
     });
-});
-
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});
