@@ -1,29 +1,34 @@
-import express from 'express';
-import mysql from 'mysql2';
-import cors from 'cors';
+import express from "express";
+import mysql from "mysql2";
+import cors from "cors";
+
 const app = express();
 
-app.use(express.json());
-app.use(cors());
+// Configurar middleware
+app.use(express.json()); // Permitir el uso de JSON en las peticiones
+app.use(cors()); // Evitar problemas con CORS
 
+// Conexión a MySQL
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'lembo'
-});
-db.connect((err) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log('Connected to database');
+
 });
 
-// Handle database connection errors
-db.on('error', (err) => {
-    console.error('Database error:', err);
+// Manejo de errores en la conexión
+db.connect(err => {
+    if (err) {
+        console.error("❌ Error de conexión a MySQL:", err);
+        return;
+    }
+    console.log("✅ Conectado a la base de datos MySQL");
 });
+
+// Ruta para agregar cultivos
+app.post("/api/cultivos", (req, res) => {
+    console.log("📩 Datos recibidos:", req.body);
 
 app.post('/insumo', (req, res) => {
     const {name, id, valor, cantidad, unidad, descripcion} = req.body;
@@ -43,3 +48,4 @@ app.post('/insumo', (req, res) => {
 app.listen(5500, () => {
     console.log('Server is running on puerto htt://localhost:5500');
     });
+});
